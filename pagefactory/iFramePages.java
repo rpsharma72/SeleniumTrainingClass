@@ -60,7 +60,7 @@ public class iFramePages extends baseTest {
 	
 	public WebElement iFramefileMenu() {
 		
-		return driver.findElement((By)iFramefileMenu);
+		return iFramefileMenu;
 		
 	}
 	

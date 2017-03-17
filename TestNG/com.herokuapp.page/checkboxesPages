@@ -1,1 +1,55 @@
+/**
+ * 
+ */
+package com.herokuapp.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import testNG.baseTestNG;
+
+/**
+ * @author Raj
+ *
+ */
+public class checkboxPages extends baseTestNG{
+	//Find Checkboxes link on homepage
+	@FindBy(partialLinkText = "Checkboxes")
+	WebElement checkboxeslink;
+	
+	//Find checkboxes title
+	@FindBy(xpath = "//*[@id='content']/div/h3")
+	WebElement checkboxTitlePage;
+	
+	//Find the first checkbox
+	@FindBy(xpath = "//*[@id='checkboxes']/input[1]")
+	WebElement firstchkbox;
+	
+	//Find the second checkbox
+	@FindBy(xpath = "//*[@id='checkboxes']/input[2]")
+	WebElement secondchkbox;
+	
+	//This class will click on the checkboxes link from the homepage
+	public void clickchkboxesLink() {
+		checkboxeslink.click();
+	}
+	
+	public String getchkboxestitle() {
+		return checkboxTitlePage.getText();
+		
+	}
+	
+	public void clickfirstchkbox() {
+		firstchkbox.click();
+		System.out.println("First Checkbox was clicked");
+	}
+	
+	public void clicksecondchkbox() {
+		secondchkbox.click();
+		System.out.println("Second Checkbox was clicked");
+	}
+	
+	
+
+}
 

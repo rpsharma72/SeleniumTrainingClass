@@ -1,0 +1,46 @@
+package testNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
+
+public class baseTestNG {
+	
+	protected static WebDriver driver;
+	public static String baseurl;
+	
+	@BeforeTest
+	
+	public void launchBrowser() {
+		
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Raj/Documents/Orasi Software/Selenium/ChromeWebDriver/chromedriver.exe");
+		driver = (WebDriver) new ChromeDriver();
+		baseurl = "https://the-internet.herokuapp.com";
+	}
+	
+	@AfterTest
+	
+	public void closeBrowser() {
+		driver.close();
+		driver.quit();
+	}
+	
+	@BeforeClass
+	
+	public void openHomepage() {
+		driver.get(baseurl);
+		driver.manage().window().maximize();
+	}
+	
+	@AfterClass
+	
+	public void backtoHomepage() {
+		
+		driver.get(baseurl);
+	}
+	
+
+}
